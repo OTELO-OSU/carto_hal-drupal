@@ -1,0 +1,6 @@
+name: Carto_Hal
+type: module
+description: Carto HAL
+core: 8.x
+package: Other
+

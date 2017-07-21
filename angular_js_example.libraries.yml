@@ -1,0 +1,32 @@
+# Angular js library js file.
+angular.angularjs:
+  js:
+    js/angular.js: {}
+    js/jquery.min.js: {}
+    js/print.js: {}
+    js/jquery.range-min.js: {}
+    js/leaflet/leaflet.js: {}
+    js/jquery.dataTables.min.js: {}
+    js/dataTables.buttons.min.js: {}
+    js/dataTables.semanticui.min.js: {}
+    js/buttons.html5.min.js: {}
+  css:
+    theme:
+      css/angular-js-theme.css: {}
+      js/leaflet/leaflet.css: {}
+      css/semantic/dist/semantic.min.css: {}
+      css/style.css: {}
+      css/jquery.range.css: {}
+
+angular_js.example:
+  js:
+    js/app.js: {}
+    js/jquery.min.js: {}
+    js/print.js: {}
+    js/jquery.range-min.js: {}
+    js/leaflet/leaflet.js: {}
+    js/jquery.dataTables.min.js: {}
+    js/dataTables.buttons.min.js: {}
+    js/dataTables.semanticui.min.js: {}
+    js/buttons.html5.min.js: {}
+    

@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Theme override for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ */
+#}
+
+<div ng-app="cartoHal">
+    <head>
+        <title>Carto HAL</title>
+       <script
+			  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+			  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+			  crossorigin="anonymous"></script>
+        <script type="text/javascript">
+	$=jQuery.noConflict(); 
+         var ConfigWidgetHal={
+            ApiURL:"https://api.archives-ouvertes.fr",
+            DisplayMap:true,
+            DisplayDatatable:true,
+	    DocumentType:"ART",
+            query:"LORIA"
+          }
+        </script>
+        
+
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    </head>
+    <body>
+    <h1>Demo Widget Hal</h1>
+        
+    <search></search>
+    
+
+    </body>
+</div>
+
