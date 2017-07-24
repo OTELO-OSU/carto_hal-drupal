@@ -3,13 +3,6 @@ carto_hal.angularjs:
   js:
     js/angular.js: {}
     js/jquery.min.js: {}
-    js/print.js: {}
-    js/jquery.range-min.js: {}
-    js/leaflet/leaflet.js: {}
-    js/jquery.dataTables.min.js: {}
-    js/dataTables.buttons.min.js: {}
-    js/dataTables.semanticui.min.js: {}
-    js/buttons.html5.min.js: {}
   css:
     theme:
       css/angular-js-theme.css: {}
@@ -21,7 +14,6 @@ carto_hal.angularjs:
 carto_hal.carto:
   js:
     js/app.js: {}
-    js/jquery.min.js: {}
     js/print.js: {}
     js/jquery.range-min.js: {}
     js/leaflet/leaflet.js: {}
