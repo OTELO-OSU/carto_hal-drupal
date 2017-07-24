@@ -39,7 +39,7 @@ class carto_halConfigForm extends ConfigFormBase {
  
       '#title' => $this->t('Enter ApiUrl'),
  
-      '#default_value' => $config->get('carto_hal.ApiUrl'),
+      '#default_value' => "http://api.archives-ouvertes.fr",
  
       '#required' => TRUE,
  
@@ -50,7 +50,7 @@ class carto_halConfigForm extends ConfigFormBase {
  
       '#title' => $this->t('Enter a collection'),
  
-      '#default_value' => $config->get('carto_hal.Collection_name'),
+      '#default_value' => "univ-lorraine",
  
       '#required' => TRUE,
  
@@ -69,7 +69,10 @@ class carto_halConfigForm extends ConfigFormBase {
  
       '#options' => $render,
  
-      '#default_value' => $config->get('carto_hal.render'), 
+      '#default_value' => array("Display_map"), 
+            
+      '#required' => TRUE,
+
     );
  
  
@@ -104,11 +107,14 @@ $document_types = array(
  
       '#type' => 'checkboxes',
  
-      '#title' => $this->t('Render to generate'),
+      '#title' => $this->t('Document types'),
  
       '#options' => $document_types,
  
       '#default_value' => $config->get('carto_hal.document_types'),
+      
+      '#required' => TRUE,
+
  
     );
  
