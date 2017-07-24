@@ -56,31 +56,46 @@ class carto_halConfigForm extends ConfigFormBase {
  
     );
  
-    $node_types = \Drupal\node\Entity\NodeType::loadMultiple();
+   $render = array(
+  'Display_map' => t('Display map'),
+  'Display_Table' => t('Display table'), 
+);
  
-    $node_type_titles = array();
-
-    foreach ($node_types as $machine_name => $val) {
- 
-      $node_type_titles[$machine_name] = $val->label();
- 
-    }
- 
-    $form['node_types'] = array(
+    $form['render'] = array(
  
       '#type' => 'checkboxes',
  
       '#title' => $this->t('Render to generate'),
  
-      '#options' => $node_type_titles,
+      '#options' => $render,
  
-      '#default_value' => $config->get('carto_hal.node_types'),
+      '#default_value' => $config->get('carto_hal.render'), 
+    );
+ 
+ 
+
+
+$document_types = array(
+  'ART' => t('ART'),
+  'COMM' => t('COMM'), 
+);
+ 
+    $form['document_types'] = array(
+ 
+      '#type' => 'checkboxes',
+ 
+      '#title' => $this->t('Render to generate'),
+ 
+      '#options' => $document_types,
+ 
+      '#default_value' => $config->get('carto_hal.document_types'),
  
     );
  
     return $form;
  
   }
+  
  
   /**
  
@@ -96,8 +111,8 @@ class carto_halConfigForm extends ConfigFormBase {
 
     $config->set('carto_hal.Collection_name', $form_state->getValue('Collection_name'));
  
-    $config->set('carto_hal.node_types', $form_state->getValue('node_types'));
- 
+    $config->set('carto_hal.render', $form_state->getValue('render'));
+
     $config->save();
  
     return parent::submitForm($form, $form_state);
