@@ -1,0 +1,13 @@
+carto_hal.config:
+
+  path: '/admin/config/carto_hal/config'
+
+  defaults:
+
+    _form: '\Drupal\carto_hal\Form\carto_halConfigForm'
+
+    _title: 'Simple Configuration'
+
+  requirements:
+
+    _permission: 'administer site configuration'

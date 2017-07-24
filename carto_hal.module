@@ -15,14 +15,16 @@ function carto_hal_help($route_name, RouteMatchInterface $route_match) {
   }
 }
 
+
+
 /**
  * Implements hook_theme().
  */
 function carto_hal_theme() {
   return [
-    'angularjs_form' => [
+    'carto_hal' => [
       'template' => 'carto_hal',
-      'variables' => [],
+      'variables' => array('ApiUrl'=>NULL,'CollectionName'=>NULL),
     ],
   ];
 }
