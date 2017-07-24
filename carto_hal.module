@@ -1,0 +1,28 @@
+<?php
+
+
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function carto_hal_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.carto_hal':
+      $output = t("Cartography of hal publications.");
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function carto_hal_theme() {
+  return [
+    'angularjs_form' => [
+      'template' => 'carto_hal',
+      'variables' => [],
+    ],
+  ];
+}

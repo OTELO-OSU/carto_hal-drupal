@@ -1,11 +1,11 @@
 <?php
 
-namespace Drupal\angular_js_example\Plugin\Block;
+namespace Drupal\carto_hal\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 
 /**
- * Provides a 'AngularExample' block.
+ * Provides a 'carto_hal' block.
  *
  * @Block(
  *  id = "Carto_hal",
@@ -20,12 +20,12 @@ class AngularExampleBlock extends BlockBase {
   public function build() {
     $build = [];
     global $base_url;
-    $build['#attached']['library'][] = 'angular_js_example/angular.angularjs';
-    $build['#attached']['library'][] = 'angular_js_example/angular_js.example';
+    $build['#attached']['library'][] = 'carto_hal/carto_hal.angularjs';
+    $build['#attached']['library'][] = 'carto_hal/carto_hal.carto';
    
  
 
-    $build['#attached']['drupalSettings']['angular_js_example']['url_base'] = $base_url;
+    $build['#attached']['drupalSettings']['carto_hal']['url_base'] = $base_url;
     $build['#theme'] = 'angularjs_form';
     return $build;
   }

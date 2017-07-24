@@ -1,5 +1,5 @@
 # Angular js library js file.
-angular.angularjs:
+carto_hal.angularjs:
   js:
     js/angular.js: {}
     js/jquery.min.js: {}
@@ -18,7 +18,7 @@ angular.angularjs:
       css/style.css: {}
       css/jquery.range.css: {}
 
-angular_js.example:
+carto_hal.carto:
   js:
     js/app.js: {}
     js/jquery.min.js: {}
