@@ -76,8 +76,28 @@ class carto_halConfigForm extends ConfigFormBase {
 
 
 $document_types = array(
-  'ART' => t('ART'),
-  'COMM' => t('COMM'), 
+  'ALL' => t('ALL ( All document type)'),
+  'COMM' => t('COMM (communication in a congress)'), 
+  'ART' => t('ART (article in a journal)'),
+  'IMG' => t('IMG'), 
+  'THESE' => t('THESE'),
+  'UNDEFINED' => t('UNDEFINED (pre-publication, working paper)'), 
+  'OTHER' => t('OTHER (other publication)'),
+  'COUV' => t('COUV (book chapter)'), 
+  'OUV' => t('OUV (Book (including critical edition and translation))'),
+  'DOUV' => t('DOUV (Direction of work, Proceedings)'), 
+  'REPORT' => t('REPORT'),
+  'HDR' => t('HDR'), 
+  'PATENT' => t('PATENT'),
+  'VIDEO' => t('VIDEO'), 
+  'LECTURE' => t('LECTURE'),
+  'NOTE' => t('NOTE (reading note)'), 
+   'MAP' => t('MAP'),
+  'SON' => t('SON'), 
+   'OTHERREPORT' => t('OTHERREPORT (Other report, seminar, workshop)'),
+  'PRESCONF' => t('PRESCONF (Document associated with scientific events)'), 
+    'POSTER' => t('POSTER')
+
 );
  
     $form['document_types'] = array(
@@ -112,6 +132,8 @@ $document_types = array(
     $config->set('carto_hal.Collection_name', $form_state->getValue('Collection_name'));
  
     $config->set('carto_hal.render', $form_state->getValue('render'));
+
+    $config->set('carto_hal.document_types', $form_state->getValue('document_types'));
 
     $config->save();
  
