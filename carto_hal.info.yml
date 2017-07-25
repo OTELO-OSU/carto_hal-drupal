@@ -3,4 +3,5 @@ type: module
 description: Carto HAL
 core: 8.x
 package: Other
+configure : carto_hal.config
 
