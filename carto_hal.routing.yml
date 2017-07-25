@@ -6,7 +6,7 @@ carto_hal.config:
 
     _form: '\Drupal\carto_hal\Form\carto_halConfigForm'
 
-    _title: 'Simple Configuration'
+    _title: 'Carto Hal Configuration'
 
   requirements:
 
