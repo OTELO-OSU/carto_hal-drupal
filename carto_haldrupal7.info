@@ -1,0 +1,6 @@
+name = Carto_haldrupal7
+description = Carto hal
+core = 7.x
+package = Other
+files[] = carto_haldrupal7.module
+version = "7.x-1.2"
