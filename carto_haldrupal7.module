@@ -1,31 +1,5 @@
 <?php
 
-/**
- * Implements hook_preprocess_page().
- */
-function carto_haldrupal7_preprocess_page(&$variables) {
-    drupal_add_js(drupal_get_path('module', 'Carto_haldrupal7') . '/js/angular.js');
-    drupal_add_js(drupal_get_path('module', 'Carto_haldrupal7') . '/js/jquery.min.js');
-    drupal_add_js(drupal_get_path('module', 'Carto_haldrupal7') . '/js/jquery.range-min.js');
-    drupal_add_js(drupal_get_path('module', 'Carto_haldrupal7') . '/js/leaflet/leaflet.js');
-    drupal_add_js(drupal_get_path('module', 'Carto_haldrupal7') . '/js/app.js');
-    drupal_add_js(drupal_get_path('module', 'Carto_haldrupal7') . '/js/jquery.dataTables.min.js');
-    drupal_add_js(drupal_get_path('module', 'Carto_haldrupal7') . '/js/dataTables.buttons.min.js');
-    drupal_add_js(drupal_get_path('module', 'Carto_haldrupal7') . '/js/buttons.html5.min.js');
-    drupal_add_js(drupal_get_path('module', 'Carto_haldrupal7') . '/js/print.js');
- drupal_add_js(drupal_get_path('module', 'Carto_haldrupal7') . '/js/dataTables.semanticui.min.js');
-
-
-    drupal_add_css(drupal_get_path('module', 'Carto_haldrupal7') . '/css/jquery.range.css');
-    drupal_add_css(drupal_get_path('module', 'Carto_haldrupal7') . '/css/semantic/dist/semantic.css');
-    drupal_add_css(drupal_get_path('module', 'Carto_haldrupal7') . '/css/carto_style.css');
-    drupal_add_css(drupal_get_path('module', 'Carto_haldrupal7') . '/js/leaflet/leaflet.css');
-
-
-
-
-}
-
 /***
  * Implements hook_block_info().
  * @return array
@@ -43,6 +17,21 @@ function carto_haldrupal7_block_info() {
  * @return array
  */
 function carto_haldrupal7_block_view($delta='') {
+ drupal_add_js(drupal_get_path('module', 'Carto_haldrupal7') . '/js/angular.js');
+    drupal_add_js(drupal_get_path('module', 'Carto_haldrupal7') . '/js/jquery.min.js');
+    drupal_add_js(drupal_get_path('module', 'Carto_haldrupal7') . '/js/jquery.range-min.js');
+    drupal_add_js(drupal_get_path('module', 'Carto_haldrupal7') . '/js/leaflet/leaflet.js');
+    drupal_add_js(drupal_get_path('module', 'Carto_haldrupal7') . '/js/app.js');
+    drupal_add_js(drupal_get_path('module', 'Carto_haldrupal7') . '/js/jquery.dataTables.min.js');
+    drupal_add_js(drupal_get_path('module', 'Carto_haldrupal7') . '/js/dataTables.buttons.min.js');
+    drupal_add_js(drupal_get_path('module', 'Carto_haldrupal7') . '/js/buttons.html5.min.js');
+    drupal_add_js(drupal_get_path('module', 'Carto_haldrupal7') . '/js/print.js');
+    drupal_add_js(drupal_get_path('module', 'Carto_haldrupal7') . '/js/dataTables.semanticui.min.js');
+
+    drupal_add_css(drupal_get_path('module', 'Carto_haldrupal7') . '/css/jquery.range.css');
+    drupal_add_css(drupal_get_path('module', 'Carto_haldrupal7') . '/css/semantic/dist/semantic.css');
+    drupal_add_css(drupal_get_path('module', 'Carto_haldrupal7') . '/css/carto_style.css');
+    drupal_add_css(drupal_get_path('module', 'Carto_haldrupal7') . '/js/leaflet/leaflet.css');
   $block = array();
   switch($delta) {
     case 'carto_haldrupal7':
@@ -64,3 +53,30 @@ function carto_haldrupal7_theme() {
     ),
   );
 }
+
+/**
+ * Implements hook_menu().
+ */
+function carto_haldrupal7_menu() {
+  $items = array();
+  $items['admin/config/carto_hal'] = array(
+    'title' => 'Configure Carto_hal',
+    'description' => 'This is example with form',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('carto_haldrupal7_form'),
+    'access arguments' => array('administer users'),
+    'access callback' => 'user_access',
+  );
+  return $items;
+}
+
+function carto_haldrupal7_form($form, &$form_state) {
+  $form = array();
+
+  $form['start_date'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Enter Api URL',
+  );
+return $form;
+}
+
