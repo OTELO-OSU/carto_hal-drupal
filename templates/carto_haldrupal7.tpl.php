@@ -12,7 +12,7 @@
             DisplayMap:true,
             DisplayDatatable:true,
             ResultSize:10000,
-            query:"OTELO-UL"
+            query:$ApiURL
           }
 
         </script>       

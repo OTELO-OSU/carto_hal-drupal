@@ -35,8 +35,49 @@ function carto_haldrupal7_block_view($delta='') {
   $block = array();
   switch($delta) {
     case 'carto_haldrupal7':
+      $ApiUrl = variable_get('carto_haldrupal7_apiurl');
+      $query = variable_get('carto_haldrupal7_collection_name');
+      $DocumentType = variable_get('carto_haldrupal7_document_types');
+      $DisplayMap = variable_get('carto_haldrupal7_render');
+
+      $type="";
+      foreach ($DocumentType as $key => $value) {
+      if ($value!==0) {
+        if ($value=="ALL") {
+          break;
+        }
+        $type=$type.','.$value;
+      }
+      }
+      $type=preg_replace('/,/','', $type, 1);
+    if($DisplayMap['Display_map']!==0){
+      $Displaymap="true";
+      }
+      else{
+      $Displaymap="false";
+    }
+      if($DisplayMap['Display_Table']!==0){
+      $DisplayTable="true";
+      }
+      else{
+      $DisplayTable="false";
+    }
       $variables = array();
-      $block['content'] = theme('carto_haldrupal7', $variables);
+      $block['content'] = '<div ng-app="cartoHal">
+        <script type="text/javascript">
+       
+  var ConfigWidgetHal={
+            ApiURL:"'.$ApiUrl.'",
+            DisplayMap:'.$Displaymap.',
+            DisplayDatatable:'.$DisplayTable.',
+            query:"'.$query.'",
+            DocumentType:"'.$type.'",
+
+          }
+
+        </script>       
+    <search></search>
+</div>';
       break;
   }
   return $block;
@@ -49,7 +90,7 @@ function carto_haldrupal7_theme() {
   return array(
     'carto_haldrupal7' => array(
         'title' => NULL,
-        'template' => 'templates/carto_haldrupal7',
+        'template' => 'templates/carto_haldrupal7'
     ),
   );
 }
@@ -61,7 +102,7 @@ function carto_haldrupal7_menu() {
   $items = array();
   $items['admin/config/carto_hal'] = array(
     'title' => 'Configure Carto_hal',
-    'description' => 'This is example with form',
+    'description' => 'carto_hal donfiguration',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('carto_haldrupal7_form'),
     'access arguments' => array('administer users'),
@@ -73,10 +114,89 @@ function carto_haldrupal7_menu() {
 function carto_haldrupal7_form($form, &$form_state) {
   $form = array();
 
-  $form['start_date'] = array(
+  $form['carto_haldrupal7_apiurl'] = array(
     '#type' => 'textfield',
-    '#title' => 'Enter Api URL',
+    '#title' => t('API URL'),
+    '#default_value' => variable_get('carto_haldrupal7_apiurl', 'http://api.archives-ouvertes.fr'),
+    '#required' => TRUE,
   );
-return $form;
+
+
+
+  $form['carto_haldrupal7_collection_name'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Collection name'),
+    '#default_value' => variable_get('carto_haldrupal7_collection_name', 'UNIV-LORRAINE'),
+    '#required' => TRUE,
+  );
+
+     $render = array(
+  'Display_map' => t('Display map'),
+  'Display_Table' => t('Display table'), 
+);
+ 
+    $form['carto_haldrupal7_render'] = array(
+ 
+      '#type' => 'checkboxes',
+ 
+      '#title' => t('Render to generate'),
+ 
+      '#options' => $render,
+ 
+      '#default_value' => variable_get('carto_haldrupal7_render', array('Display_map')), 
+            
+      '#required' => TRUE,
+
+    );
+
+
+
+
+$document_types = array(
+  'ALL' => t('ALL ( All document type)'),
+  'COMM' => t('COMM (communication in a congress)'), 
+  'ART' => t('ART (article in a journal)'),
+  'IMG' => t('IMG'), 
+  'THESE' => t('THESE'),
+  'UNDEFINED' => t('UNDEFINED (pre-publication, working paper)'), 
+  'OTHER' => t('OTHER (other publication)'),
+  'COUV' => t('COUV (book chapter)'), 
+  'OUV' => t('OUV (Book (including critical edition and translation))'),
+  'DOUV' => t('DOUV (Direction of work, Proceedings)'), 
+  'REPORT' => t('REPORT'),
+  'HDR' => t('HDR'), 
+  'PATENT' => t('PATENT'),
+  'VIDEO' => t('VIDEO'), 
+  'LECTURE' => t('LECTURE'),
+  'NOTE' => t('NOTE (reading note)'), 
+   'MAP' => t('MAP'),
+  'SON' => t('SON'), 
+   'OTHERREPORT' => t('OTHERREPORT (Other report, seminar, workshop)'),
+  'PRESCONF' => t('PRESCONF (Document associated with scientific events)'), 
+    'POSTER' => t('POSTER')
+
+);
+ 
+    $form['carto_haldrupal7_document_types'] = array(
+ 
+      '#type' => 'checkboxes',
+ 
+      '#title' => t('Document types'),
+ 
+      '#options' => $document_types,
+ 
+      '#default_value' => variable_get('carto_haldrupal7_document_types', array('ALL')), 
+      
+      '#required' => TRUE,
+
+ 
+    );
+
+
+  return system_settings_form($form);
+
 }
+
+
+
 
