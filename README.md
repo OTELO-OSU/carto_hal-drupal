@@ -19,9 +19,7 @@ Uploader le Zip génèrer dans le backend de drupal:
 
 Rendez vous dans Extend, Install new module et uploadez le fichier .zip
 
-Une fois cela fait, Activez le plugin dans la list, ensuite rendez vous a cette adresse:
-
-/admin/config/carto_hal/config
+Une fois cela fait, Activez le plugin dans la list, et configurez le.
 
 Afin de configurer le widget.
 
@@ -51,9 +49,7 @@ Uploader le Zip génèrer dans le backend de drupal:
 
 Rendez vous dans Modules, Install new module et uploadez le fichier .zip
 
-Une fois cela fait, Activez le plugin dans la list, ensuite rendez vous a cette adresse:
-
-admin/config/carto_hal/
+Une fois cela fait, Activez le plugin dans la list, et configurez le.
 
 Afin de configurer le widget.
 
