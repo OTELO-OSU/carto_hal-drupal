@@ -21,7 +21,6 @@ Rendez vous dans Extend, Install new module et uploadez le fichier .zip
 
 Une fois cela fait, Activez le plugin dans la list, et configurez le.
 
-Afin de configurer le widget.
 
 Ensuite rendez vous dans structure , Block layout et selectionnez un block ou le widget doit apparaitre, place block et choisissez carto_hal
 
@@ -51,7 +50,6 @@ Rendez vous dans Modules, Install new module et uploadez le fichier .zip
 
 Une fois cela fait, Activez le plugin dans la list, et configurez le.
 
-Afin de configurer le widget.
 
 Ensuite rendez vous dans structure , Block layout et selectionnez un block ou le widget doit apparaitre, place block et choisissez carto_hal
 
