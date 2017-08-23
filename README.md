@@ -8,6 +8,7 @@ Le Widget s'installe de cette manière:
 
 	git clone git@bitbucket.org:arnouldpy/carto_hal-drupal.git
 Rendez vous ensuite sur la branche Carto_hal_drupal_8
+	git checkout Carto_hal_drupal_8
 
 ## Deploiement: ##
 
@@ -37,6 +38,7 @@ Le Widget s'installe de cette manière:
 	git clone git@bitbucket.org:arnouldpy/carto_hal-drupal.git
 	
 Rendez vous ensuite sur la branche Carto_hal_drupal_7
+	git checkout Carto_hal_drupal_7
 
 ## Deploiement: ##
 
