@@ -2,6 +2,7 @@
 #  Widget Carto_HAL Drupal 8 #
 
 Widget pour Drupal 8.X permettant de cartographier les pays publiant dans une collection HAL.
+Testé et validé pour Drupal 8.3.5-0
 
 
 Le Widget s'installe de cette manière:
@@ -35,6 +36,8 @@ Ensuite rendez vous dans structure , Block layout et selectionnez un block ou le
 #  Widget Carto_HAL Drupal 7 #
 
 Widget pour Drupal 7.X permettant de cartographier les pays publiant dans une collection HAL.
+Testé et validé pour Drupal 7.56-0
+
 
 
 Le Widget s'installe de cette manière:
