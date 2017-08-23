@@ -13,9 +13,12 @@ Rendez vous ensuite sur la branche Carto_hal_drupal_8
 
 ## Deploiement: ##
 
+Sortez du dossier du projet.
+
 Executez cette commande:
 
-	zip -r Widget_carto_hal.zip  * 
+	zip -r carto_hal-drupal.zip carto_hal-drupal/
+
 
 Uploader le Zip génèrer dans le backend de drupal:
 
@@ -44,9 +47,11 @@ Rendez vous ensuite sur la branche Carto_hal_drupal_7
 
 ## Deploiement: ##
 
+Sortez du dossier du projet.
+
 Executez cette commande:
 
-	zip -r Widget_carto_hal.zip  * 
+	zip -r carto_hal-drupal.zip carto_hal-drupal/
 
 Uploader le Zip génèrer dans le backend de drupal:
 
