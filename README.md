@@ -2,7 +2,7 @@
 #  Widget Carto_HAL Drupal 8 #
 
 Widget pour Drupal 8.X permettant de cartographier les pays publiant dans une collection HAL.
-Testé et validé pour Drupal 8.3.5-0
+Testé et validé pour Drupal 8.3.5-0, 8.3.7-0
 
 
 Le Widget s'installe de cette manière:
