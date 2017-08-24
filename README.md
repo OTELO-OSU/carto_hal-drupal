@@ -21,14 +21,14 @@ Executez cette commande:
 	zip -r carto_hal-drupal.zip carto_hal-drupal/
 
 
-Uploader le Zip génèrer dans le backend de drupal:
+Uploader le Zip généré dans le backend de drupal:
 
-Rendez vous dans Extend, Install new module et uploadez le fichier .zip
+	Rendez vous dans "Extend", "Install new module" et uploadez le fichier .zip
 
 Une fois cela fait, Activez le plugin dans la list, et configurez le.
 
 
-Ensuite rendez vous dans structure , Block layout et selectionnez un block ou le widget doit apparaitre, place block et choisissez carto_hal
+Ensuite rendez vous dans "structure" , "Block layout" et selectionnez un block ou le widget doit apparaitre, cliquer sur "place block" et choisissez carto_hal
 
 
 
@@ -56,14 +56,14 @@ Executez cette commande:
 
 	zip -r carto_hal-drupal.zip carto_hal-drupal/
 
-Uploader le Zip génèrer dans le backend de drupal:
+Uploader le Zip généré dans le backend de drupal:
 
-Rendez vous dans Modules, Install new module et uploadez le fichier .zip
+	Rendez vous dans "Modules", "Install new module" et uploadez le fichier .zip
 
-Une fois cela fait, Activez le plugin dans la list, et configurez le.
+Une fois cela fait, Activez le plugin dans la liste, et configurez le.
 
 
-Ensuite rendez vous dans structure , Block layout et selectionnez un block ou le widget doit apparaitre, place block et choisissez carto_hal
+Ensuite rendez vous dans "structure", "Block layout" et selectionnez un block ou le widget doit apparaitre, cliquer sur "place block" et choisissez carto_hal
 
 
 
