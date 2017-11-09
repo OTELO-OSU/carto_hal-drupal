@@ -16,7 +16,10 @@
 
   }
 
-
+#map img {
+     max-width: none!important; 
+     max-height: none!important; 
+}
 #mapcontainer{
 display:none;
 }
