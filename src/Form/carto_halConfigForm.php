@@ -39,7 +39,7 @@ class carto_halConfigForm extends ConfigFormBase {
  
       '#title' => $this->t('Enter ApiUrl'),
  
-      '#default_value' => "http://api.archives-ouvertes.fr",
+      '#default_value' => $config->get('carto_hal.ApiUrl'),
  
       '#required' => TRUE,
  
@@ -50,7 +50,18 @@ class carto_halConfigForm extends ConfigFormBase {
  
       '#title' => $this->t('Enter a collection'),
  
-      '#default_value' => "univ-lorraine",
+      '#default_value' => $config->get('carto_hal.Collection_name'),
+ 
+      '#required' => TRUE,
+ 
+    );
+      $form['country_field'] = array(
+ 
+      '#type' => 'textfield',
+ 
+      '#title' => $this->t('Enter a field country field '),
+ 
+      '#default_value' => $config->get('carto_hal.country_field'),
  
       '#required' => TRUE,
  
@@ -69,11 +80,16 @@ class carto_halConfigForm extends ConfigFormBase {
  
       '#options' => $render,
  
-      '#default_value' => array("Display_map"), 
+      '#default_value' => $config->get('carto_hal.render'), 
             
       '#required' => TRUE,
 
     );
+
+
+
+
+   
  
  
 
@@ -117,6 +133,23 @@ $document_types = array(
 
  
     );
+$render = array(
+  'Display_title' => t('Display title')
+);
+ 
+    $form['title'] = array(
+ 
+      '#type' => 'checkboxes',
+ 
+      '#title' => $this->t('Display title'),
+ 
+      '#options' => $render,
+ 
+      '#default_value' => $config->get('carto_hal.title'), 
+            
+      '#required' => FALSE,
+
+    );
  
     return $form;
  
@@ -140,6 +173,11 @@ $document_types = array(
     $config->set('carto_hal.render', $form_state->getValue('render'));
 
     $config->set('carto_hal.document_types', $form_state->getValue('document_types'));
+        
+    $config->set('carto_hal.title', $form_state->getValue('title'));
+
+    $config->set('carto_hal.country_field', $form_state->getValue('country_field'));
+
 
     $config->save();
  

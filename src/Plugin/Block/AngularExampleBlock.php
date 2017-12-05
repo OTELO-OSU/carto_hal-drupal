@@ -24,6 +24,9 @@ class AngularExampleBlock extends BlockBase {
     $CollectionName = $config->get('carto_hal.Collection_name');
     $DisplayMap = $config->get('carto_hal.render');
     $DocumentType = $config->get('carto_hal.document_types');
+    $DisplayTitle = $config->get('carto_hal.title');
+    $CountryField = $config->get('carto_hal.country_field');
+
     $type="";
     foreach ($DocumentType as $key => $value) {
       if ($value!==0) {
@@ -48,6 +51,13 @@ class AngularExampleBlock extends BlockBase {
     	$DisplayTable="false";
     }
 
+      if($DisplayTitle['Display_Title']!==0){
+      $DisplayTitle="true";
+      }
+      else{
+      $DisplayTitle="false";
+    }
+
     $build['#attached']['library'][] = 'carto_hal/carto_hal.angularjs';
     $build['#attached']['library'][] = 'carto_hal/carto_hal.carto';
     $build['#attached']['drupalSettings']['carto_hal']['url_base'] = $base_url;
@@ -56,6 +66,8 @@ class AngularExampleBlock extends BlockBase {
     $build['#DisplayMap']=$Displaymap;
     $build['#DisplayTable']=$DisplayTable;
     $build['#document_types']=$type;
+    $build['#title']=$DisplayTitle;
+    $build['#country_field']=$CountryField;
     $build['#theme'] = 'carto_hal';
     return $build;
   }

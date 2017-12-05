@@ -24,7 +24,7 @@ function carto_hal_theme() {
   return [
     'carto_hal' => [
       'template' => 'carto_hal',
-      'variables' => array('ApiUrl'=>NULL,'CollectionName'=>NULL,'DisplayMap'=>NULL,'DisplayTable'=>NULL,'document_types'=>NULL),
+      'variables' => array('ApiUrl'=>NULL,'CollectionName'=>NULL,'DisplayMap'=>NULL,'DisplayTable'=>NULL,'document_types'=>NULL,'title'=>NULL,'country_field'=>NULL),
     ],
   ];
 }
