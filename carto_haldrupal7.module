@@ -39,6 +39,9 @@ function carto_haldrupal7_block_view($delta='') {
       $query = variable_get('carto_haldrupal7_collection_name');
       $DocumentType = variable_get('carto_haldrupal7_document_types');
       $DisplayMap = variable_get('carto_haldrupal7_render');
+      $DisplayTitle = variable_get('carto_haldrupal7_title');
+      $CountryField = variable_get('carto_haldrupal7_country_field');
+
 
       $type="";
       foreach ($DocumentType as $key => $value) {
@@ -56,6 +59,12 @@ function carto_haldrupal7_block_view($delta='') {
       else{
       $Displaymap="false";
     }
+    if($DisplayTitle['Display_Title']!==0){
+      $DisplayTitle="true";
+      }
+      else{
+      $DisplayTitle="false";
+    }
       if($DisplayMap['Display_Table']!==0){
       $DisplayTable="true";
       }
@@ -72,6 +81,8 @@ function carto_haldrupal7_block_view($delta='') {
             DisplayDatatable:'.$DisplayTable.',
             query:"'.$query.'",
             DocumentType:"'.$type.'",
+            DisplayTitle:'.$DisplayTitle.',
+            CountryField:"'.$CountryField.'"
 
           }
 
@@ -130,9 +141,17 @@ function carto_haldrupal7_form($form, &$form_state) {
     '#required' => TRUE,
   );
 
+
+  $form['carto_haldrupal7_country_field'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Country field'),
+    '#default_value' => variable_get('carto_haldrupal7_country_field', 'structCountry_s'),
+    '#required' => TRUE,
+  );
+
      $render = array(
   'Display_map' => t('Display map'),
-  'Display_Table' => t('Display table'), 
+  'Display_Table' => t('Display table')
 );
  
     $form['carto_haldrupal7_render'] = array(
@@ -148,7 +167,22 @@ function carto_haldrupal7_form($form, &$form_state) {
       '#required' => TRUE,
 
     );
+    $render = array(
+  'Display_Title' => t('Display title')
+);
+ $form['carto_haldrupal7_title'] = array(
+ 
+      '#type' => 'checkboxes',
+ 
+      '#title' => t('Display title'),
+ 
+      '#options' => $render,
+ 
+      '#default_value' => variable_get('carto_haldrupal7_title', array('Display_Title')), 
+            
+      '#required' => FALSE,
 
+    );
 
 
 

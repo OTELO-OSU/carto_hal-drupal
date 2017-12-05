@@ -11,7 +11,6 @@
             ApiURL:"http://api.archives-ouvertes.fr",
             DisplayMap:true,
             DisplayDatatable:true,
-            ResultSize:10000,
             query:$ApiURL
           }
 
