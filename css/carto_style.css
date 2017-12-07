@@ -15,7 +15,7 @@
   	}
 
   }
-#map img {
+#zone-content #map img {
      max-width: none!important; 
      max-height: none!important; 
 }
