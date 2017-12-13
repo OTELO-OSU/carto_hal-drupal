@@ -2,12 +2,12 @@
 #  Widget Carto_HAL Drupal 8 #
 
 Widget pour Drupal 8.X permettant de cartographier les pays publiant dans une collection HAL.
-Testé et validé pour Drupal 8.3.5-0, 8.3.7-0
+TestÃ© et validÃ© pour Drupal 8.3.5-0, 8.3.7-0
 
 
-Le Widget s'installe de cette manière:
+Le Widget s'installe de cette maniÃ¨re:
 
-	git clone git@bitbucket.org:arnouldpy/carto_hal-drupal.git
+	git clone https://github.com/OTELO-OSU/carto_hal-drupal.git
 Rendez vous ensuite sur la branche Carto_hal_drupal_8
 	
 	git checkout Carto_hal_drupal_8
@@ -21,7 +21,7 @@ Executez cette commande:
 	zip -r carto_hal-drupal.zip carto_hal-drupal/
 
 
-Uploader le Zip généré dans le backend de drupal:
+Uploader le Zip gÃ©nÃ©rÃ© dans le backend de drupal:
 
 	Rendez vous dans "Extend", "Install new module" et uploadez le fichier .zip
 
@@ -36,13 +36,13 @@ Ensuite rendez vous dans "structure" , "Block layout" et selectionnez un block o
 #  Widget Carto_HAL Drupal 7 #
 
 Widget pour Drupal 7.X permettant de cartographier les pays publiant dans une collection HAL.
-Testé et validé pour Drupal 7.56-0
+TestÃ© et validÃ© pour Drupal 7.56-0
 
 
 
-Le Widget s'installe de cette manière:
+Le Widget s'installe de cette maniÃ¨re:
 
-	git clone git@bitbucket.org:arnouldpy/carto_hal-drupal.git
+	git clone https://github.com/OTELO-OSU/carto_hal-drupal.git
 	
 Rendez vous ensuite sur la branche Carto_hal_drupal_7
 	
@@ -56,7 +56,7 @@ Executez cette commande:
 
 	zip -r carto_hal-drupal.zip carto_hal-drupal/
 
-Uploader le Zip généré dans le backend de drupal:
+Uploader le Zip gÃ©nÃ©rÃ© dans le backend de drupal:
 
 	Rendez vous dans "Modules", "Install new module" et uploadez le fichier .zip
 
